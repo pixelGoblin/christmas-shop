@@ -45,6 +45,9 @@ function setButtonState(buttonId, isDisabled) {
     button.setAttribute("data-disabled", isDisabled ? "true" : "false");
 }
 
+// setButtonState("prev", true);
+// setButtonState("next", false);
+
 
 
 document.querySelectorAll(".gift-item").forEach((item) => {
