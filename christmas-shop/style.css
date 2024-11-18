@@ -152,7 +152,7 @@ header {
     display: block;
 }
 
-.menu li:hover {
+.menu li:hover[state="enabled"] {
     color: var(--primary);
     background-color: var(--primary10);
 }
