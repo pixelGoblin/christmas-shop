@@ -10,17 +10,17 @@
 </head>
 <body>
     <header>
-        <div class="logo">
+        <a href="index.html" class="logo">
             <img src="img/logo_512px.png" alt="logo" class="logo-img">
             <span class="action-small">The Gifts</span>
-        </div>        
+        </a>        
         <nav class="main-nav">
             <input type="checkbox" id="menu-toggle">
             <ul class="menu">
-                <li><a href="gifts.html" class="action-small">Gifts</a></li>
-                <li><a href="#about-section" class="action-small">About</a></li>
-                <li><a href="#best-gifts-section" class="action-small">Best</a></li>
-                <li><a href="#footer" class="action-small">Contacts</a></li>
+                <li state="enabled"><a href="gifts.html" class="action-small">Gifts</a></li>
+                <li state="enabled"><a href="#about-section" class="action-small">About</a></li>
+                <li state="enabled"><a href="#best-gifts-section" class="action-small">Best</a></li>
+                <li state="enabled"><a href="#footer" class="action-small">Contacts</a></li>
             </ul>
             <label for="menu-toggle" class="hamburger">
                 <span class="line"></span>
@@ -28,130 +28,127 @@
             </label>
         </nav>
     </header>
+    <main>
+        <div class="main-container">
+            <section class="hero container" id="hero-section">
+                <div class="content">
+                    <span class="caption text">Merry Christmas</span>
+                    <h1 class="text">Gift yourself<br>the magic of new<br>possibilities</h1>
+                    <div class="button"><span class="action-small text">Explore magical gifts</span></div>
+                    <span class="caption text">and Happy New Year</span>
+                </div>
+            </section>
+            <section class="about container" id="about-section">
+                <div class="content">
+                    <div class="text">
+                        <span class="caption">About</span>
+                        <h2>Unleash your inner superhero!</h2>
+                        <p class="paragraph">This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
+                    </div>
+                    <div class="img"></div>
+                </div>
+            </section>
+            <section class="slider container" id="slider-section">
+                <div class="content">
+                    <div class="text">
+                        <span class="caption">Become Happier!</span>
+                        <h2>in the new 2025</h2>
+                    </div>
+                    <div class="slider">
+                        <div class="slider-item">
+                            <span class="slider-text">live</span>
+                            <img src="img/snowman.png" alt="slider item">
+                        </div>
+                        <div class="slider-item">
+                            <span class="slider-text">create</span>
+                            <img src="img/christmas-trees.png" alt="slider item">
+                        </div>
+                        <div class="slider-item">
+                            <span class="slider-text">love</span>
+                            <img src="img/christmas-tree-ball.png" alt="slider item">
+                        </div>
+                        <div class="slider-item">
+                            <span class="slider-text">dream</span>
+                            <img src="img/fairytale-house.png" alt="slider item">
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <div class="button-small" id="prev" data-disabled="true"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div class="button-small" id="next" data-disabled="false"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </section>
+            <section class="best-gifts container" id="best-gifts-section">
+                <div class="content">
+                    <div class="text">
+                        <span class="caption text">Best Gifts</span>
+                        <h2>Especially for you</h2>
+                    </div>
+                    <div class="gifts-items">
+                        <div class="gift-item for-work">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for work</h4>
+                                <h3>console.log guru</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-health">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for health</h4>
+                                <h3>hydration bot</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-work">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for work</h4>
+                                <h3>merge master</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-harmony">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for harmony</h4>
+                                <h3>spontaneous coding philosopher</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cta container" id="cta-section">
+                <div class="content">
+                    <div class="items-text">
+                        <h2>Ready to start your<br>journey to a better<br>version of yourself?</h2>
+                        <div class="button"><span class="action-small">Explore magical gifts</span></div>
+                        <span class="caption text">The New Year is Coming Soon...</span>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <h2 class="countdown-item-value" id="days">47</h2>
+                                <h4 class="countdown-item-text">days</h4>
+                            </div>
+                            <div class="line-vertical"></div>
+                            <div class="countdown-item">
+                                <h2 class="countdown-item-value" id="hours">5</h2>
+                                <h4 class="countdown-item-text">hours</h4>
+                            </div>
+                            <div class="line-vertical"></div>
+                            <div class="countdown-item">
+                                <h2 class="countdown-item-value" id="minutes">34</h2>
+                                <h4 class="countdown-item-text">minutes</h4>
+                            </div>
+                            <div class="line-vertical"></div>
+                            <div class="countdown-item">
+                                <h2 class="countdown-item-value" id="seconds">12</h2>
+                                <h4 class="countdown-item-text">seconds</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-    <div class="bg-img"></div>
-
-    <div class="container">
-        <div class="hero-section" id="hero-section">
-            
-            <div class="items">
-                
-                <span class="caption">Merry Christmas</span>
-                <h1>Gift yourself<br>the magic of new<br>possibilities</h1>
-                <div class="button"><span class="action-small">Explore magical gifts</span></div>
-                <span class="caption">and Happy New Year</span>
-            </div>
-        </div>
-        <div class="about-section" id="about-section">
-            <div class="items">
-                <div class="text">
-                    <span class="caption">About</span>
-                    <h2>Unleash your inner superhero!</h2>
-                    <p class="paragraph">This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
-                </div>
-                <div class="img"></div>
-            </div>
-        </div>
-        <div class="slider-section" id="slider-section">
-            <div class="items">
-                <div class="text">
-                    <span class="caption">Become Happier!</span>
-                    <h2>in the new 2025</h2>
-                </div>
-                <div class="slider">
-                    <div class="slider-item">
-                        <span class="slider-text">live</span>
-                        <img src="img/snowman.png" alt="slider item">
-                    </div>
-                    <!-- <div class="slider-item">
-                        <span class="slider-text">create</span>
-                        <img src="img/christmas-trees.png" alt="slider item">
-                    </div> -->
-                    <!-- <div class="slider-item">
-                        <span class="slider-text">love</span>
-                        <img src="img/christmas-tree-ball.png" alt="slider item">
-                    </div> -->
-                    <!-- <div class="slider-item">
-                        <span class="slider-text">dream</span>
-                        <img src="img/fairytale-house.png" alt="slider item">
-                    </div> -->
-                </div>
-                <div class="slider-controls">
-                    <div class="button-small" id="prev" data-disabled="true"><i class="fa-solid fa-arrow-left"></i></div>
-                    <div class="button-small" id="next" data-disabled="false"><i class="fa-solid fa-arrow-right"></i></div>
-                </div>
-            </div>
-        </div>
-        <div class="best-gifts-section" id="best-gifts-section">
-            <div class="items">
-                <div class="text">
-                    <span class="caption">Best Gifts</span>
-                    <h2>Especially for you</h2>
-                </div>
-                <div class="gifts-items">
-                    <div class="gift-item for-work">
-                        <div class="gift-img"></div>
-                        <div class="gift-text">
-                            <h4>for work</h4>
-                            <h3>console.log guru</h3>
-                        </div>
-                    </div>
-                    <div class="gift-item for-health">
-                        <div class="gift-img"></div>
-                        <div class="gift-text">
-                            <h4>for health</h4>
-                            <h3>hydration bot</h3>
-                        </div>
-                    </div>
-                    <div class="gift-item for-work">
-                        <div class="gift-img"></div>
-                        <div class="gift-text">
-                            <h4>for work</h4>
-                            <h3>merge master</h3>
-                        </div>
-                    </div>
-                    <div class="gift-item for-harmony">
-                        <div class="gift-img"></div>
-                        <div class="gift-text">
-                            <h4>for harmony</h4>
-                            <h3>spontaneous coding philosopher</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cta-section" id="cta-section">
-            <div class="items">
-                <div class="items-text">
-                    <h2>Ready to start your<br>journey to a better<br>version of yourself?</h2>
-                    <div class="button"><span class="action-small">Explore magical gifts</span></div>
-                    <span class="caption">The New Year is Coming Soon...</span>
-                    <div class="countdown">
-                        <div class="countdown-item">
-                            <h2 class="countdown-item-value" id="days">47</h2>
-                            <h4 class="countdown-item-text">days</h4>
-                        </div>
-                        <div class="line-vertical"></div>
-                        <div class="countdown-item">
-                            <h2 class="countdown-item-value" id="hours">5</h2>
-                            <h4 class="countdown-item-text">hours</h4>
-                        </div>
-                        <div class="line-vertical"></div>
-                        <div class="countdown-item">
-                            <h2 class="countdown-item-value" id="minutes">34</h2>
-                            <h4 class="countdown-item-text">minutes</h4>
-                        </div>
-                        <div class="line-vertical"></div>
-                        <div class="countdown-item">
-                            <h2 class="countdown-item-value" id="seconds">12</h2>
-                            <h4 class="countdown-item-text">seconds</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <!-- <div class="bg-img-footer"></div> -->
     <footer id="footer">
         <div class="footer-container">
@@ -186,7 +183,7 @@
                     <i class="fa-brands fa-x-twitter fa-xl" style="color: #181c29;"></i>
                 </div>
                 <span class="paragraph">&copy; Copyright 2025, All rights reserved</span>
-                <a href="https://rs.school/" target="_blank" class="caption">Made in Rolling Scopes School</a>
+                <a href="https://rs.school/" target="_blank" class="caption text">Made in Rolling Scopes School</a>
             </div>
         </div>
         <!-- <a href="https://www.flaticon.com/free-icons/snow" title="snow icons">Snow icons created by Freepik - Flaticon</a> -->
