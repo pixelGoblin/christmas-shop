@@ -190,12 +190,12 @@ header {
     display: block;
 }
 
-.menu li:hover[state="enabled"] {
+.menu li:hover[data-state="enabled"] {
     color: var(--primary);
     background-color: var(--primary10);
 }
 
-.menu li[state="disabled"] {
+.menu li[data-state="disabled"] {
     pointer-events: none;
     /* cursor: not-allowed; */
 }
@@ -245,7 +245,7 @@ a {
 }
 
 .main-container {
-    max-width: min(1440px, 100%);
+    max-width: min(1440px, 100vw);
     margin: 0 auto;
     border-radius: 20px;
 
@@ -266,7 +266,7 @@ a {
     background: url(img/bg-snow.png) repeat center/contain, var(--primary);
 
     position: relative;
-    top: 64px;
+    /* top: 64px; */
 
     overflow-x: hidden;
 }
@@ -274,11 +274,10 @@ a {
 .container {
     /* margin: 0 auto; */
     max-width: min(1440px, 100%);
-    /* max-width: 100%; */
 }
 
 .container > .content {
-    height: fit-content;
+    /* height: fit-content; */
     max-width: min(1276px, 100%);
     margin: 0 auto;
 }
@@ -290,9 +289,10 @@ a {
 #hero-section { 
     grid-area: hero-section;
     background: url(img/bg-ball.png) no-repeat center/cover, url(img/bg-snow.png) no-repeat center/cover;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     padding: 60px 8px;
+
 
     /* display: flex;
     justify-content: center;
@@ -446,7 +446,7 @@ a {
     color: var(--static-white);
 }
 
-#best-gifts-section .gifts-items {
+.gifts-items {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -455,7 +455,7 @@ a {
     flex-wrap: wrap;
 }
 
-#best-gifts-section .gifts-items .gift-item {
+.gifts-items .gift-item {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr;
@@ -466,7 +466,7 @@ a {
     cursor: pointer;
 }
 
-#best-gifts-section .gifts-items .gift-item .gift-img {
+.gift-item .gift-img {
     background-size: cover;
     width: 310px;
     height: 230px;
@@ -496,8 +496,9 @@ a {
     color: var(--tag-pink);
 }
 
-#best-gifts-section .gifts-items .gift-item .gift-text {
+.gift-item .gift-text {
     background-color: var(--static-white);
+    color: var(--dark);
     border-radius: 20px;
     padding: 20px;
     display: flex;
@@ -507,7 +508,7 @@ a {
     text-align: left;
 }
 
-#best-gifts-section .gifts-items .gift-item .gift-text h3 {
+.gift-item .gift-text h3 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -517,7 +518,7 @@ a {
     word-break: break-word;
 }
 
-#best-gifts-section .gifts-items .gift-item:hover h3 {
+.gifts-items .gift-item:hover h3 {
     color: var(--primary);
 }
 
@@ -686,6 +687,73 @@ footer .footer-container {
     line-height: 24px;
 }
 
+/* GIFTS PAGE */
+
+main {
+    position: relative;
+    top: 64px;
+}
+
+.main-gift-container {
+    max-width: min(1440px, 100vw);
+    /* position: relative;
+    top: 64px; */
+    margin: 0 auto;
+    border-radius: 20px;
+    background: url(img/bg-garland.png) no-repeat top center/contain, var(--primary);
+    /* padding: 60px 8px; */
+    color: var(--static-white);
+}
+
+.main-gift-container #gifts-section {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    text-align: center; */
+    padding: 60px 8px;
+}
+
+.main-gift-container #gifts-section .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#gifts-section .content h1 {
+    text-align: center;
+    text-wrap: balance;
+}
+
+#gifts-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#gifts-menu a {
+    color: var(--static-white);
+    border-radius: 12px;
+    padding: 12px 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#gifts-menu a[data-state="active"] {
+    background-color: var(--static-white20);
+}
+
+#gifts-menu a:hover {
+    background-color: var(--static-white20);
+    cursor: pointer;
+}
+
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
@@ -759,7 +827,7 @@ footer .footer-container {
     body {
         overflow-x: hidden;
     }
-    
+
     .main-container {
         grid-template-rows: 572px 1000px 488px 1616px 704px;
         max-width: 380px;
