@@ -243,9 +243,9 @@ body {
     background-color: var(--static-white);
 }
 
-main {
-    /* width: 100%; */
-}
+/* main {
+    width: 100%;
+} */
 
 a {
     text-decoration: none;
