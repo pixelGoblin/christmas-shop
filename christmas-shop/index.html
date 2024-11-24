@@ -10,23 +10,25 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">
-            <img src="img/logo_512px.png" alt="logo" class="logo-img">
-            <span class="action-small">The Gifts</span>
-        </a>        
-        <nav class="main-nav">
-            <input type="checkbox" id="menu-toggle">
-            <ul class="menu">
-                <li data-state="enabled"><a href="gifts.html" class="action-small">Gifts</a></li>
-                <li data-state="enabled"><a href="#about-section" class="action-small">About</a></li>
-                <li data-state="enabled"><a href="#best-gifts-section" class="action-small">Best</a></li>
-                <li data-state="enabled"><a href="#footer" class="action-small">Contacts</a></li>
-            </ul>
-            <label for="menu-toggle" class="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-            </label>
-        </nav>
+        <div id="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo_512px.png" alt="logo" class="logo-img">
+                <span class="action-small">The Gifts</span>
+            </a>        
+            <nav class="main-nav">
+                <input type="checkbox" id="menu-toggle">
+                <ul class="menu">
+                    <li data-state="enabled"><a href="gifts.html" class="action-small">Gifts</a></li>
+                    <li data-state="enabled"><a href="#about-section" class="action-small">About</a></li>
+                    <li data-state="enabled"><a href="#best-gifts-section" class="action-small">Best</a></li>
+                    <li data-state="enabled"><a href="#footer" class="action-small">Contacts</a></li>
+                </ul>
+                <label for="menu-toggle" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+            </nav>
+        </div>
     </header>
     <main>
         <div class="main-container">
@@ -41,9 +43,11 @@
             <section class="about container" id="about-section">
                 <div class="content">
                     <div class="text">
-                        <span class="caption">About</span>
-                        <h2>Unleash your inner superhero!</h2>
-                        <p class="paragraph">This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
+                        <div id="about-container">
+                            <span class="caption">About</span>
+                            <h2>Unleash your inner superhero!</h2>
+                            <p class="paragraph">This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
+                        </div>
                     </div>
                     <div class="img"></div>
                 </div>
@@ -121,26 +125,28 @@
                     <div class="items-text">
                         <h2>Ready to start your<br>journey to a better<br>version of yourself?</h2>
                         <a href="gifts.html" class="button"><span class="action-small">Explore magical gifts</span></a>
-                        <span class="caption text">The New Year is Coming Soon...</span>
-                        <div class="countdown">
-                            <div class="countdown-item">
-                                <h2 class="countdown-item-value" id="days">47</h2>
-                                <h4 class="countdown-item-text">days</h4>
-                            </div>
-                            <div class="line-vertical"></div>
-                            <div class="countdown-item">
-                                <h2 class="countdown-item-value" id="hours">5</h2>
-                                <h4 class="countdown-item-text">hours</h4>
-                            </div>
-                            <div class="line-vertical"></div>
-                            <div class="countdown-item">
-                                <h2 class="countdown-item-value" id="minutes">34</h2>
-                                <h4 class="countdown-item-text">minutes</h4>
-                            </div>
-                            <div class="line-vertical"></div>
-                            <div class="countdown-item">
-                                <h2 class="countdown-item-value" id="seconds">12</h2>
-                                <h4 class="countdown-item-text">seconds</h4>
+                        <div id="countdown-container">
+                            <span class="caption text">The New Year is Coming Soon...</span>
+                            <div class="countdown">
+                                <div class="countdown-item">
+                                    <h2 class="countdown-item-value" id="days">47</h2>
+                                    <h4 class="countdown-item-text">days</h4>
+                                </div>
+                                <div class="line-vertical"></div>
+                                <div class="countdown-item">
+                                    <h2 class="countdown-item-value" id="hours">5</h2>
+                                    <h4 class="countdown-item-text">hours</h4>
+                                </div>
+                                <div class="line-vertical"></div>
+                                <div class="countdown-item">
+                                    <h2 class="countdown-item-value" id="minutes">34</h2>
+                                    <h4 class="countdown-item-text">minutes</h4>
+                                </div>
+                                <div class="line-vertical"></div>
+                                <div class="countdown-item">
+                                    <h2 class="countdown-item-value" id="seconds">12</h2>
+                                    <h4 class="countdown-item-text">seconds</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -153,24 +159,18 @@
             <div class="footer-cards">
                 <a href="tel:+375291112233" class="footer-card">
                     <div class="footer-card-img"></div>
-                    <div class="footer-card-text">
-                        <span class="action-large">+375 (29) 111-22-33</span>
-                        <h3>Call us</h3>
-                    </div>
+                    <span class="action-large">+375 (29) 111-22-33</span>
+                    <h3>Call us</h3>
                 </a>
                 <a href="https://maps.app.goo.gl/yqNieH2CbtmBQvU17" target="_blank" class="footer-card">
                     <div class="footer-card-img"></div>
-                    <div class="footer-card-text">
-                        <span class="action-large">magic forest</span>
-                        <h3>Meet us</h3>
-                    </div>
+                    <span class="action-large">magic forest</span>
+                    <h3>Meet us</h3>
                 </a>
                 <a href="mailto:gifts@magic.com" class="footer-card">
                     <div class="footer-card-img"></div>
-                    <div class="footer-card-text">
-                        <span class="action-large">gifts@magic.com</span>
-                        <h3>write us</h3>
-                    </div>
+                    <span class="action-large">gifts@magic.com</span>
+                    <h3>write us</h3>
                 </a>
             </div>
             <div class="footer-text">
@@ -180,7 +180,7 @@
                     <i class="fa-brands fa-instagram fa-xl" style="color: #181c29;"></i>
                     <i class="fa-brands fa-x-twitter fa-xl" style="color: #181c29;"></i>
                 </div>
-                <span class="paragraph">&copy; Copyright 2025, All rights reserved</span>
+                <span class="paragraph">&copy; Copyright 2025, All Rights Reserved</span>
                 <a href="https://rs.school/" target="_blank" class="caption text">Made in Rolling Scopes School</a>
             </div>
         </div>
