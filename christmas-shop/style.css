@@ -762,7 +762,11 @@ main {
 
     .button:hover {
         background-color: var(--static-white);
-        color: var(--dark);
+        color: var(--dark) !important;
+    }
+
+    .button:hover .action-small {
+        color: var(--dark) !important;
     }
 
     .button-small:hover {
