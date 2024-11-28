@@ -758,7 +758,7 @@ main {
 
 /* RESPONSIVE */
 
-@media (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
 
     .button:hover {
         background-color: var(--static-white);
@@ -802,7 +802,7 @@ main {
     .main-container {
         grid-template-rows: 524px 648px 488px 908px 668px;
     }
-    
+
 }
 
 @media (max-width: 768px) {
