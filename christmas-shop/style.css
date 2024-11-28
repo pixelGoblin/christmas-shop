@@ -242,6 +242,7 @@ a {
     max-width: min(1440px, 100vw);
     margin: 0 auto;
     border-radius: 20px;
+    max-width: 100%;
 
     display: grid; 
     grid-template-columns: 1fr; 
@@ -268,14 +269,12 @@ a {
 .container {
     /* margin: 0 auto; */
     max-width: min(1440px, 100%);
+    width: 100vw;
 }
 
 .container > .content {
     max-width: min(1276px, 100%);
     margin: 0 auto;
-
-    /* DELETE */
-    /* width: 1000px; */
 }
 
 
@@ -318,7 +317,7 @@ a {
     grid-area: about-section;
     padding: 60px 8px;
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 
 #about-section .content {
@@ -337,6 +336,7 @@ a {
     align-content: flex-start;
     flex: 1 1 50%;
     max-height: 528px;
+    max-width: 50%;
     /* width: 100%; */
     padding: 60px 60px;
 }
@@ -790,11 +790,19 @@ main {
 }
 
 @media (max-width: 1276px) {
-    
+
     .footer-cards {
         flex-direction: column;
     }
 
+}
+
+@media (min-width: 769px) and (max-width: 1276px) {
+
+    .main-container {
+        grid-template-rows: 524px 648px 488px 908px 668px;
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -804,13 +812,13 @@ main {
     }
 
     .main-container {
-        grid-template-rows: 524px 648px 488px 908px 668px;
+        grid-template-rows: 572px 1000px 488px 1616px 704px;
         max-width: min(768px, 100%);
     }
 
     .container {
         max-width: min(768px, 100%);
-        width: 100%;
+        /* width: 100%; */
     };
 
     .container .content {
