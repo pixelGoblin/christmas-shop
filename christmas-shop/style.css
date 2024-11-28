@@ -97,37 +97,6 @@ h4 {
     color: inherit;
 }
 
-@media (min-width: 769px) {
-
-    .button:hover {
-        background-color: var(--static-white);
-        color: var(--dark);
-    }
-
-    .button-small:hover {
-        background-color: var(--static-white);
-        color: var(--primary);
-    }
-
-    .menu li:hover[data-state="enabled"] {
-        color: var(--primary);
-        background-color: var(--primary10);
-    }
-
-    .gifts-items .gift-item:hover h3 {
-        color: var(--primary);
-    }
-
-    #footer a:hover {
-        color: var(--primary);
-    }
-
-    #gifts-menu a:hover {
-        background-color: var(--static-white20);
-        cursor: pointer;
-    }
-}
-
 .button-small {
     width: 56px;
     height: 56px;
@@ -789,6 +758,45 @@ main {
 
 /* RESPONSIVE */
 
+@media (min-width: 769px) {
+
+    .button:hover {
+        background-color: var(--static-white);
+        color: var(--dark);
+    }
+
+    .button-small:hover {
+        background-color: var(--static-white);
+        color: var(--primary);
+    }
+
+    .menu li:hover[data-state="enabled"] {
+        color: var(--primary);
+        background-color: var(--primary10);
+    }
+
+    .gifts-items .gift-item:hover h3 {
+        color: var(--primary);
+    }
+
+    #footer a:hover {
+        color: var(--primary);
+    }
+
+    #gifts-menu a:hover {
+        background-color: var(--static-white20);
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1276px) {
+    
+    .footer-cards {
+        flex-direction: column;
+    }
+
+}
+
 @media (max-width: 768px) {
 
     .logo {
@@ -850,9 +858,6 @@ main {
 
     .footer {
         height: 928px;
-    }
-    .footer-cards {
-        flex-direction: column;
     }
 
     #about-section .text {
