@@ -97,9 +97,35 @@ h4 {
     color: inherit;
 }
 
-.button:hover {
-    background-color: var(--static-white);
-    color: var(--dark);
+@media (min-width: 769px) {
+
+    .button:hover {
+        background-color: var(--static-white);
+        color: var(--dark);
+    }
+
+    .button-small:hover {
+        background-color: var(--static-white);
+        color: var(--primary);
+    }
+
+    .menu li:hover[data-state="enabled"] {
+        color: var(--primary);
+        background-color: var(--primary10);
+    }
+
+    .gifts-items .gift-item:hover h3 {
+        color: var(--primary);
+    }
+
+    #footer a:hover {
+        color: var(--primary);
+    }
+
+    #gifts-menu a:hover {
+        background-color: var(--static-white20);
+        cursor: pointer;
+    }
 }
 
 .button-small {
@@ -116,11 +142,6 @@ h4 {
     /* vertical-align: middle;  */
     font-size: 15px;
     color: inherit;
-}
-
-.button-small:hover {
-    background-color: var(--static-white);
-    color: var(--primary);
 }
 
 .button-small[data-disabled="true"] {
@@ -197,11 +218,6 @@ header {
     text-decoration: none;
     color: inherit;
     display: block;
-}
-
-.menu li:hover[data-state="enabled"] {
-    color: var(--primary);
-    background-color: var(--primary10);
 }
 
 .menu li[data-state="disabled"] {
@@ -539,10 +555,6 @@ a {
     word-break: break-word;
 }
 
-.gifts-items .gift-item:hover h3 {
-    color: var(--primary);
-}
-
 /* CTA */
 
 #cta-section {
@@ -696,10 +708,6 @@ footer .footer-container {
     color: var(--dark);
 }
 
-#footer a:hover {
-    color: var(--primary);
-}
-
 .socials-container {
     display: flex;
     flex-direction: row;
@@ -776,11 +784,6 @@ main {
 
 #gifts-menu a[data-state="active"] {
     background-color: var(--static-white20);
-}
-
-#gifts-menu a:hover {
-    background-color: var(--static-white20);
-    cursor: pointer;
 }
 
 
