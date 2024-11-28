@@ -801,7 +801,7 @@ main {
 
 }
 
-@media (min-width: 769px) and (max-width: 1276px) {
+@media (min-width: 768px) and (max-width: 1276px) {
 
     .main-container {
         grid-template-rows: 524px 648px 488px 908px 668px;
@@ -809,7 +809,7 @@ main {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .logo {
         margin: 0;
