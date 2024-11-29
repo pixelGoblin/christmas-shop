@@ -113,7 +113,7 @@ h4 {
     color: inherit;
 }
 
-.button-small[data-disabled="true"] {
+.button-small[data-enabled="false"] {
     cursor: not-allowed;
     pointer-events: none; 
     color: var(--static-white40);
@@ -242,7 +242,7 @@ a {
     max-width: min(1440px, 100vw);
     margin: 0 auto;
     border-radius: 20px;
-    max-width: 100%;
+    /* max-width: 100%; */
 
     display: grid; 
     grid-template-columns: 1fr; 
@@ -399,6 +399,7 @@ a {
     /* overflow-x: hidden; */
     overscroll-behavior-inline: contain;
     /* box-sizing: content-box; */
+    scroll-snap-type: x mandatory;
 }
 
 #slider-section .slider-item {
@@ -692,6 +693,8 @@ footer .footer-container {
     padding: 8px;
     text-align: center;
     line-height: 24px;
+    cursor: pointer;
+    color: #181c29;
 }
 
 /* GIFTS PAGE */
@@ -790,6 +793,10 @@ main {
     #gifts-menu a:hover {
         background-color: var(--static-white20);
         cursor: pointer;
+    }
+
+    .socials-container i:hover {
+        color: var(--primary);
     }
 }
 

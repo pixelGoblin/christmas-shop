@@ -40,15 +40,42 @@ document.querySelectorAll('.menu li').forEach(item => {
 
 // SLIDER
 
-function setButtonState(buttonId, isDisabled) {
+function setButtonState(buttonId, state) {
     const button = document.getElementById(buttonId);
-    button.setAttribute("data-disabled", isDisabled ? "true" : "false");
+    button.setAttribute("data-enabled", state ? "true" : "false");
 }
 
-// setButtonState("prev", true);
-// setButtonState("next", false);
+function checkButtonPosition() {
+    if (sliderRow.getBoundingClientRect().left < posLeft) {
+        setButtonState("prev", true);
+    } else if (sliderRow.getBoundingClientRect().right > posRight) {
+        setButtonState("next", false);
+    }
+}
+
+const sliderRow = document.getElementById("slider-row");
+const posLeft = sliderRow.getBoundingClientRect().left;
+const posRight = sliderRow.getBoundingClientRect().right;
+
+document.getElementById("prev").addEventListener("click", () => {
+    const currentPosition = parseFloat(sliderRow.style.transform.replace("translateX(", "")) || 0;
+    // const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / 4;
+    const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / 4;
+    sliderRow.style.transform = `translateX(${currentPosition + movingDistance}px)`;
+    checkButtonPosition()
+});
+
+document.getElementById("next").addEventListener("click", () => {
+    const currentPosition = parseFloat(sliderRow.style.transform.replace("translateX(", "")) || 0;
+    // const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / 4;
+    const movingDistance = (sliderRow.scrollWidth - sliderRow.getBoundingClientRect().width) / 4;
+    sliderRow.style.transform = `translateX(${currentPosition - movingDistance}px)`;
+    checkButtonPosition()
+    console.log(`${sliderRow.getBoundingClientRect().right}`);
+});
 
 
+// GIFTS
 
 document.querySelectorAll(".gift-item").forEach((item) => {
     item.addEventListener("click", () => {
