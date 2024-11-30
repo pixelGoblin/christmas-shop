@@ -192,6 +192,9 @@ header {
 .menu li[data-state="disabled"] {
     pointer-events: none;
     /* cursor: not-allowed; */
+
+    color: var(--primary);
+    background-color: var(--primary10);
 }
 
 /* HAMBURGER MENU */
@@ -226,6 +229,7 @@ header {
 
 body {
     background-color: var(--static-white);
+    overflow-y: visible;
 }
 
 /* main {
@@ -747,14 +751,14 @@ main {
     justify-content: center;
 }
 
-#gifts-menu a {
+#gifts-menu .tab {
     color: var(--static-white);
     border-radius: 12px;
     padding: 12px 20px;
     background-color: rgba(0, 0, 0, 0);
 }
 
-#gifts-menu a[data-state="active"] {
+#gifts-menu .tab[data-state="active"] {
     background-color: var(--static-white20);
 }
 
@@ -829,7 +833,7 @@ main {
         color: var(--primary);
     }
 
-    #gifts-menu a:hover {
+    #gifts-menu .tab:hover {
         background-color: var(--static-white20);
         cursor: pointer;
     }
@@ -839,7 +843,7 @@ main {
     }
 }
 
-@media (max-width: 1276px) {
+@media (max-width: 1060px) {
 
     .footer-cards {
         flex-direction: column;
@@ -855,7 +859,7 @@ main {
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
     .logo {
         margin: 0;
@@ -900,7 +904,7 @@ main {
 
     .menu a {
         font: 600 24px/152% 'Montserrat', sans-serif;
-        letter-spacing: 16%;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: inherit;
     }
@@ -913,9 +917,9 @@ main {
     }
 
     .no-scroll {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
+        overflow-y: hidden;
+        /* position: fixed; */
+        /* width: 100%; */
     }
 
     #menu-toggle:checked ~ .hamburger span.line:nth-child(1) {
@@ -937,6 +941,10 @@ main {
 
     #about-section .text {
         max-width: 376px;
+    }
+
+    .menu li[data-state="disabled"] {
+        pointer-events: auto;
     }
 }
 

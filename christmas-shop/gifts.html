@@ -17,7 +17,7 @@
             </a>        
             <nav class="main-nav">
                 <input type="checkbox" id="menu-toggle">
-                <ul class="menu">
+                <ul id="nav-menu" class="menu">
                     <li data-state="disabled"><a href="gifts.html" class="action-small">Gifts</a></li>
                     <li data-state="enabled"><a href="index.html#about-section" class="action-small">About</a></li>
                     <li data-state="enabled"><a href="index.html#best-gifts-section" class="action-small">Best</a></li>
@@ -35,14 +35,14 @@
             <section class="gifts container" id="gifts-section">
                 <div class="content">
                     <h1>Achieve health,<br>harmony, and<br>inner strength</h1>
-                    <div id="gifts-menu">
-                        <a href="#!" data-state="active" class="tab"><span class="action-small">All</span></a>
-                        <a href="#!" class="tab"><span class="action-small">For Work</span></a>
-                        <a href="#!" class="tab"><span class="action-small">For Health</span></a>
-                        <a href="#!" class="tab"><span class="action-small">For Harmony</span></a>
-                    </div>
+                    <ul id="gifts-menu">
+                        <li data-state="active" class="tab"><span class="action-small">All</span></li>
+                        <li class="tab"><span class="action-small">For Harmony</span></li>
+                        <li class="tab"><span class="action-small">For Work</span></li>
+                        <li class="tab"><span class="action-small">For Health</span></li>
+                    </ul>
                     <div class="gifts-items" id="gifts-container">
-                        <div class="gift-item for-work">
+                        <!-- <div class="gift-item for-work">
                             <div class="gift-img"></div>
                             <div class="gift-text">
                                 <h4>for work</h4>
@@ -125,7 +125,7 @@
                                 <h4>for harmony</h4>
                                 <h3>spontaneous coding philosopher</h3>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>

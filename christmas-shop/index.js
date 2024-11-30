@@ -41,7 +41,7 @@ const hourEl = document.getElementById("hours");
 const minuteEl = document.getElementById("minutes");
 const secondEl = document.getElementById("seconds");
 
-const newYearTime = new Date("Jan 1, 2025 00:00:00").getTime();
+const newYearTime = new Date("Jan 1, 2025 00:00:00 GMT+00:00").getTime();
 
 updateCountdown();
 
@@ -65,3 +65,26 @@ function updateCountdown() {
     secondEl.innerText = s;
     setTimeout(updateCountdown, 1000);
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const giftItems = document.querySelectorAll(".gift-item");
+
+    fetch('gifts.json')
+        .then(response => response.json())
+        .then(data => {
+            const shuffledData = data.sort(() => Math.random() - 0.5);
+
+            giftItems.forEach((container, index) => {
+                const card = shuffledData[index];
+                container.innerHTML = `
+                    <div class="gift-img"></div>
+                    <div class="gift-text">
+                        <h4>${card['category']}</h4>
+                        <h3>${card['name']}</h3>
+                    </div>
+                `;
+                container.classList.add(card['category'].toLowerCase().replace(' ', '-'));
+            });
+        })
+});
