@@ -143,3 +143,13 @@ tabMenu.forEach((item) => {
     });
 });
 
+// HEADER FIX
+
+onresize = () => {
+    if (window.innerWidth <= 768) {
+        document.getElementById('nav-menu').style.display = 'none';
+        setTimeout(() => {
+            document.getElementById('nav-menu').style.display = null;
+        }, 300);
+    }
+};

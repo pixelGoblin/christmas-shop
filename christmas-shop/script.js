@@ -21,23 +21,6 @@ menuToggle.addEventListener('change', () => {
     }
 });
 
-onresize = () => {
-    if (window.innerWidth <= 768) {
-        document.getElementById('nav-menu').style.display = 'none';
-        setTimeout(() => {
-            document.getElementById('nav-menu').style.display = null;
-        }, 300);
-    }
-};
-
-// GIFTS
-
-// document.querySelectorAll(".gift-item").forEach((item) => {
-//     item.addEventListener("click", () => {
-//         item.classList.toggle("active");
-//     })
-// })
-
 // HIDE HEADER
 
 const header = document.querySelector("header");

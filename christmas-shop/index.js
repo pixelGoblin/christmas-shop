@@ -1,38 +1,68 @@
 // SLIDER
 
+const sliderRow = document.getElementById("slider-row");
+let posLeft = sliderRow.getBoundingClientRect().left;
+// let posRight = sliderRow.getBoundingClientRect().right;
+
 function setButtonState(buttonId, state) {
     const button = document.getElementById(buttonId);
     button.setAttribute("data-enabled", state ? "true" : "false");
 }
 
-function checkButtonPosition() {
-    if (sliderRow.getBoundingClientRect().left < posLeft) {
+function checkSliderPosition() {
+    if (Math.round(sliderRow.getBoundingClientRect().left) < Math.round(posLeft)) {
         setButtonState("prev", true);
-    } else if (sliderRow.getBoundingClientRect().right > posRight) {
+    } else {
+        setButtonState("prev", false);
+    }
+    if (Math.round(posLeft - sliderRow.getBoundingClientRect().left) >= Math.round(sliderRow.scrollWidth - sliderRow.getBoundingClientRect().width)) {
         setButtonState("next", false);
+    } else {
+        setButtonState("next", true);
     }
 }
 
-const sliderRow = document.getElementById("slider-row");
-const posLeft = sliderRow.getBoundingClientRect().left;
-const posRight = sliderRow.getBoundingClientRect().right;
+
+let numOfClicks = 0;
+let movingDistance = 0;
+
+function calculateMovingDistance() {
+    if (window.innerWidth > 768) {
+        numOfClicks = 3;
+    } else {
+        numOfClicks = 6;
+    }
+    movingDistance = (sliderRow.scrollWidth - sliderRow.getBoundingClientRect().width) / numOfClicks;
+}
+
+calculateMovingDistance();
 
 document.getElementById("prev").addEventListener("click", () => {
     const currentPosition = parseFloat(sliderRow.style.transform.replace("translateX(", "")) || 0;
-    // const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / 4;
-    const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / 4;
+    // const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / numOfClicks;
     sliderRow.style.transform = `translateX(${currentPosition + movingDistance}px)`;
-    checkButtonPosition()
+    checkSliderPosition();
 });
 
 document.getElementById("next").addEventListener("click", () => {
     const currentPosition = parseFloat(sliderRow.style.transform.replace("translateX(", "")) || 0;
-    // const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / 4;
-    const movingDistance = (sliderRow.scrollWidth - sliderRow.getBoundingClientRect().width) / 4;
     sliderRow.style.transform = `translateX(${currentPosition - movingDistance}px)`;
-    checkButtonPosition()
-    console.log(`${sliderRow.getBoundingClientRect().right}`);
+    checkSliderPosition();
 });
+
+
+onresize = () => {
+    if (window.innerWidth <= 768) {
+        document.getElementById('nav-menu').style.display = 'none';
+        setTimeout(() => {
+            document.getElementById('nav-menu').style.display = null;
+        }, 300);
+    }
+    sliderRow.style.transform = `translateX(0px)`;
+    posLeft = sliderRow.getBoundingClientRect().left;
+    calculateMovingDistance();
+};
+
 
 // COUNTDOWN
 
