@@ -58,7 +58,6 @@ function drawCard(card, container, index) {
     cardContainer.classList.add(card['category'].toLowerCase().replace(' ', '-'));
     container.appendChild(cardContainer);
     cardContainer.addEventListener("click", (event) => {
-        // console.log(event.currentTarget.classList); //delete later
         drawModal(event.currentTarget);
     })
 }
