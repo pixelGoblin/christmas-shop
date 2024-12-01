@@ -38,4 +38,20 @@ onresize = () => {
 //     })
 // })
 
+// HIDE HEADER
 
+const header = document.querySelector("header");
+let lastScrollY = window.scrollY;
+
+function handleScroll() {
+    const currentScrollY = window.scrollY;
+    console.log(currentScrollY);
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add("hide");
+    } else {
+        header.classList.remove("hide");
+    }
+    lastScrollY = currentScrollY;
+}
+window.addEventListener("scroll", handleScroll);
