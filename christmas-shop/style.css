@@ -987,16 +987,12 @@ main {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 
     .logo {
         margin: 0;
     }
 
-    .main-container {
-        grid-template-rows: 572px 1000px 488px 1616px 704px;
-        max-width: min(768px, 100%);
-    }
 
     .container {
         max-width: min(768px, 100%);
@@ -1028,6 +1024,11 @@ main {
         height: 100%;
         background-color: var(--static-white);
         transition: transform .3s ease-in-out;
+    }
+
+    .menu li {
+        position: relative;
+        top: -32px;
     }
 
     .menu a {
@@ -1073,6 +1074,13 @@ main {
 
     .menu li[data-state="disabled"] {
         pointer-events: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-rows: 572px 1000px 488px 1616px 704px;
+        max-width: min(768px, 100%);
     }
 }
 
