@@ -140,7 +140,6 @@ header {
 
 header.hide {
     transform: translateY(-100%);
-    
 }
 
 .logo {
