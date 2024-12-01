@@ -813,13 +813,15 @@ main {
     max-width: 400px;
     border-radius: 20px;
     background-color: var(--content-background);
+    display: inline-block;
 }
 
 .modal-image {
     height: 230px;
-    border-radius: 20px 20px 0 0;
     background-size: cover;
     background-position: center;
+
+    width: 100%;
 }
 
 .for-work .modal-image{
@@ -878,7 +880,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    /* align-items: start; */
+    align-items: center;
     gap: 12px;
 }
 
@@ -894,9 +896,15 @@ main {
     gap: 8px;
 }
 
-.modal-skills img {
+.modal-skills img.score-icon {
     width: 16px;
     height: 16px;
+}
+
+.modal-skills img.score-icon.bleak {
+    /* color: var(--primary10); */
+    /* fill: var(--primary10); */
+    filter: opacity(0.1);
 }
 
 .modal-content .close-button {
@@ -915,6 +923,10 @@ main {
     color: var(--dark);
     font-size: 24px;
     /* line-height: 1; */
+}
+
+.modal::backdrop {
+    background-color: var(--overlay);
 }
 
 /* RESPONSIVE */

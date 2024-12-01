@@ -32,16 +32,10 @@ onresize = () => {
 
 // GIFTS
 
-document.querySelectorAll(".gift-item").forEach((item) => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("active");
-    })
-})
+// document.querySelectorAll(".gift-item").forEach((item) => {
+//     item.addEventListener("click", () => {
+//         item.classList.toggle("active");
+//     })
+// })
 
-// fetch('gifts.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         // console.log(data.length);
-
-//     });
 

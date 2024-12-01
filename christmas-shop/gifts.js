@@ -23,6 +23,7 @@ let shuffledDataHarmony = [];
 let shuffledDataHealth = [];
 let shuffledDataWork = [];
 
+// const giftsImage
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             shuffledData = data.sort(() => Math.random() - 0.5);
 
             shuffledData.forEach((card, index) => {
-                // drawCard(card, giftsContainer, index);
+                drawCard(card, giftsContainer, index);
             });
             shuffledDataHarmony = shuffledData.filter(card => card['category'] === 'For Harmony');
             shuffledDataHealth = shuffledData.filter(card => card['category'] === 'For Health');
@@ -46,6 +47,7 @@ function drawCard(card, container, index) {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add("gift-item");
     cardContainer.dataset.idx = index;
+    cardContainer.dataset.tab = card['category'].toLowerCase().replace(' ', '-');
     cardContainer.innerHTML = `
         <div class="gift-img"></div>
         <div class="gift-text">
@@ -55,7 +57,59 @@ function drawCard(card, container, index) {
     `;
     cardContainer.classList.add(card['category'].toLowerCase().replace(' ', '-'));
     container.appendChild(cardContainer);
+    cardContainer.addEventListener("click", (event) => {
+        console.log(event.currentTarget.classList); //delete later
+        drawModal(event.currentTarget);
+    })
 }
+
+
+
+const modal = document.getElementById("card-modal");
+const closeButton = document.getElementById("close-modal");
+
+closeButton.addEventListener("click", () => {
+    modal.close();
+});
+
+function drawModal(card) {
+    const cardModal = document.getElementById("card-modal");
+    const cardModalContent = cardModal.querySelector(".modal-content");
+    const modalBasicInfo = cardModal.querySelector(".modal-basic-info");
+    const modalSkills = cardModal.querySelector(".modal-skills").querySelectorAll("li");
+
+    const categoryDataMap = {
+        "For Work": shuffledDataWork,
+        "For Health": shuffledDataHealth,
+        "For Harmony": shuffledDataHarmony,
+        "All": shuffledData
+    };
+
+    cardModalContent.classList.remove("for-work", "for-health", "for-harmony");
+    cardModalContent.classList.add(card.classList[1]);
+    modalBasicInfo.querySelector(".category").textContent = card.querySelector("h4").textContent;
+    modalBasicInfo.querySelector(".name").textContent = card.querySelector("h3").textContent;
+    modalBasicInfo.querySelector(".paragraph").textContent = categoryDataMap[card.querySelector("h4").textContent][card.dataset.idx].description;
+
+    modalSkills.forEach((skill, index) => {
+        const skillScore = categoryDataMap[card.querySelector("h4").textContent][card.dataset.idx].superpowers[skill.querySelector("span.skill-name").textContent.toLowerCase()];
+        skill.querySelector("span.paragraph.score").textContent = skillScore;
+        skill.querySelector("div.icons").innerHTML = `<img src="img/icon.svg" alt="snowflake icon" class="score-icon">`.repeat(5);
+        skill.querySelectorAll("img.score-icon").forEach((icon, iconIndex) => {
+            if (iconIndex + 1 > skillScore.replace(/[^0-9]/g, '') / 100) {
+                icon.classList.add("bleak");
+            }
+        })
+    })
+    
+
+
+
+    // console.log(categoryDataMap[card.querySelector("h4").textContent][card.dataset.idx].description);
+    modal.showModal();
+}
+
+
 
 // TABS
 
@@ -66,15 +120,14 @@ tabMenu.forEach((item) => {
     item.addEventListener("click", () => {
         tabMenu.forEach((item) => item.dataset.state = null);
         item.dataset.state = "active";
-
-        const giftsContainer = document.getElementById("gifts-container");
-        const category = item.querySelector("span").textContent.trim();
         const categoryDataMap = {
             "For Work": shuffledDataWork,
             "For Health": shuffledDataHealth,
             "For Harmony": shuffledDataHarmony,
             "All": shuffledData
         };
+        const giftsContainer = document.getElementById("gifts-container");
+        const category = item.querySelector("span").textContent.trim();
         giftsContainer.innerHTML = "";
 
         categoryDataMap[category].forEach((card, index) => {
