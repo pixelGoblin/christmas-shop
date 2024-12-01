@@ -73,6 +73,13 @@ closeButton.addEventListener("click", () => {
     document.body.style.overflowY = null;
 });
 
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.close();
+        document.body.style.overflowY = null;
+    }
+});
+
 function drawModal(card) {
     const cardModal = document.getElementById("card-modal");
     const cardModalContent = cardModal.querySelector(".modal-content");
