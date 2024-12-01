@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             shuffledData = data.sort(() => Math.random() - 0.5);
 
-            shuffledData.forEach((card) => {
-                drawCard(card, giftsContainer);
+            shuffledData.forEach((card, index) => {
+                // drawCard(card, giftsContainer, index);
             });
             shuffledDataHarmony = shuffledData.filter(card => card['category'] === 'For Harmony');
             shuffledDataHealth = shuffledData.filter(card => card['category'] === 'For Health');
@@ -42,9 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 });
 
-function drawCard(card, container) {
+function drawCard(card, container, index) {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add("gift-item");
+    cardContainer.dataset.idx = index;
     cardContainer.innerHTML = `
         <div class="gift-img"></div>
         <div class="gift-text">
@@ -76,15 +77,9 @@ tabMenu.forEach((item) => {
         };
         giftsContainer.innerHTML = "";
 
-        categoryDataMap[category].forEach((card) => {
-            drawCard(card, giftsContainer);
+        categoryDataMap[category].forEach((card, index) => {
+            drawCard(card, giftsContainer, index);
         });
     });
 });
 
-// fetch('gifts.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             const shuffledData = data.sort(() => Math.random() - 0.5);
-            
-//         });

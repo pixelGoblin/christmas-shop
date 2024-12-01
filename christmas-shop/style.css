@@ -801,6 +801,121 @@ main {
     pointer-events: all;
 }
 
+/* MODAL */
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    background-color: var(--content-background);
+}
+
+.modal-image {
+    height: 230px;
+    border-radius: 20px 20px 0 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.for-work .modal-image{
+    background-image: url("img/gift-for-work.png");
+}
+
+.for-work .category {
+    color: var(--tag-purple);
+}
+
+.for-health .modal-image{
+    background-image: url("img/gift-for-health.png");
+}
+
+.for-health .category {
+    color: var(--tag-green);
+}
+
+.for-harmony .modal-image{
+    background-image: url("img/gift-for-harmony.png");
+}
+
+.for-harmony .category {
+    color: var(--tag-pink);
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    padding: 20px;
+    text-align: start;
+    color: var(--dark);
+    background-color: var(--static-white);
+    border-radius: 20px;
+}
+
+.modal-basic-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-skills li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    /* align-items: start; */
+    gap: 12px;
+}
+
+.modal-skills li span:first-child {
+    flex-grow: 2;
+}
+
+.modal-skills .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-skills img {
+    width: 16px;
+    height: 16px;
+}
+
+.modal-content .close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content i.fa-solid {
+    color: var(--dark);
+    font-size: 24px;
+    /* line-height: 1; */
+}
 
 /* RESPONSIVE */
 
