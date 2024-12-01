@@ -814,6 +814,7 @@ main {
     border-radius: 20px;
     background-color: var(--content-background);
     display: inline-block;
+    /* margin: 0 8px; */
 }
 
 .modal-image {
@@ -1119,5 +1120,12 @@ main {
 @media (min-width: 769px) {
     #back-to-top {
         display: none;
+    }
+}
+
+@media (max-width: 410px) {
+
+    .modal-content {
+        max-width: 364px;
     }
 }

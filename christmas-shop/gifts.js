@@ -58,7 +58,7 @@ function drawCard(card, container, index) {
     cardContainer.classList.add(card['category'].toLowerCase().replace(' ', '-'));
     container.appendChild(cardContainer);
     cardContainer.addEventListener("click", (event) => {
-        console.log(event.currentTarget.classList); //delete later
+        // console.log(event.currentTarget.classList); //delete later
         drawModal(event.currentTarget);
     })
 }
@@ -70,6 +70,7 @@ const closeButton = document.getElementById("close-modal");
 
 closeButton.addEventListener("click", () => {
     modal.close();
+    document.body.style.overflowY = null;
 });
 
 function drawModal(card) {
@@ -85,14 +86,16 @@ function drawModal(card) {
         "All": shuffledData
     };
 
+    const selectedTab = document.getElementById("gifts-menu").querySelector(`li[data-state="active"]`).querySelector("span").textContent;
+
     cardModalContent.classList.remove("for-work", "for-health", "for-harmony");
     cardModalContent.classList.add(card.classList[1]);
     modalBasicInfo.querySelector(".category").textContent = card.querySelector("h4").textContent;
     modalBasicInfo.querySelector(".name").textContent = card.querySelector("h3").textContent;
-    modalBasicInfo.querySelector(".paragraph").textContent = categoryDataMap[card.querySelector("h4").textContent][card.dataset.idx].description;
-
-    modalSkills.forEach((skill, index) => {
-        const skillScore = categoryDataMap[card.querySelector("h4").textContent][card.dataset.idx].superpowers[skill.querySelector("span.skill-name").textContent.toLowerCase()];
+    modalBasicInfo.querySelector(".paragraph").textContent = categoryDataMap[selectedTab][card.dataset.idx].description;
+    
+    modalSkills.forEach((skill) => {
+        const skillScore = categoryDataMap[selectedTab][card.dataset.idx].superpowers[skill.querySelector("span.skill-name").textContent.toLowerCase()];
         skill.querySelector("span.paragraph.score").textContent = skillScore;
         skill.querySelector("div.icons").innerHTML = `<img src="img/icon.svg" alt="snowflake icon" class="score-icon">`.repeat(5);
         skill.querySelectorAll("img.score-icon").forEach((icon, iconIndex) => {
@@ -101,9 +104,7 @@ function drawModal(card) {
             }
         })
     })
-    
-
-
+    document.body.style.overflowY = 'hidden';
 
     // console.log(categoryDataMap[card.querySelector("h4").textContent][card.dataset.idx].description);
     modal.showModal();
