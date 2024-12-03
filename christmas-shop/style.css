@@ -408,6 +408,8 @@ a {
     overscroll-behavior-inline: contain;
     /* box-sizing: content-box; */
     scroll-snap-type: x mandatory;
+    /* scroll-behavior: smooth; */
+    /* transition: transform 0.2s ease-in-out; */
 }
 
 #slider-section .slider-item {

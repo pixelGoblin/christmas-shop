@@ -57,6 +57,9 @@ onresize = () => {
         setTimeout(() => {
             document.getElementById('nav-menu').style.display = null;
         }, 300);
+    } else if (window.innerWidth > 768) {
+        menuToggle.checked = false;
+        document.body.style.overflowY = null;
     }
     sliderRow.style.transform = `translateX(0px)`;
     posLeft = sliderRow.getBoundingClientRect().left;
