@@ -20,6 +20,10 @@ function checkSliderPosition() {
     } else {
         setButtonState("next", true);
     }
+    if (sliderRow.style.transform === "translateX(0px)") {
+        setButtonState("prev", false);
+        setButtonState("next", true);
+    }
 }
 
 
@@ -35,19 +39,28 @@ function calculateMovingDistance() {
     movingDistance = (sliderRow.scrollWidth - sliderRow.getBoundingClientRect().width) / numOfClicks;
 }
 
-calculateMovingDistance();
+document.addEventListener("DOMContentLoaded", () => {
+    calculateMovingDistance();
+    checkSliderPosition();
+})
 
 document.getElementById("prev").addEventListener("click", () => {
     const currentPosition = parseFloat(sliderRow.style.transform.replace("translateX(", "")) || 0;
     // const movingDistance = (sliderRow.scrollWidth - window.innerWidth) / numOfClicks;
     sliderRow.style.transform = `translateX(${currentPosition + movingDistance}px)`;
-    checkSliderPosition();
+    setButtonState("prev", false);
+    setTimeout(() => {
+        checkSliderPosition();
+    }, 200);
 });
 
 document.getElementById("next").addEventListener("click", () => {
     const currentPosition = parseFloat(sliderRow.style.transform.replace("translateX(", "")) || 0;
     sliderRow.style.transform = `translateX(${currentPosition - movingDistance}px)`;
-    checkSliderPosition();
+    setTimeout(() => {
+        checkSliderPosition();
+    }, 200);
+    
 });
 
 
@@ -64,6 +77,7 @@ onresize = () => {
     sliderRow.style.transform = `translateX(0px)`;
     posLeft = sliderRow.getBoundingClientRect().left;
     calculateMovingDistance();
+    checkSliderPosition();
 };
 
 
