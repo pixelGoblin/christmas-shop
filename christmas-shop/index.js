@@ -20,6 +20,10 @@ function checkSliderPosition() {
     } else {
         setButtonState("next", true);
     }
+    if (sliderRow.style.transform === "translateX(0px)") {
+        setButtonState("prev", false);
+        setButtonState("next", true);
+    }
 }
 
 
@@ -64,6 +68,7 @@ onresize = () => {
     sliderRow.style.transform = `translateX(0px)`;
     posLeft = sliderRow.getBoundingClientRect().left;
     calculateMovingDistance();
+    checkSliderPosition();
 };
 
 
