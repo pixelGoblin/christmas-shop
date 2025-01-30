@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo_24px.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo_512px.png" alt="logo" class="logo-img">
+                <span class="action-small">The Gifts</span>
+            </a>        
+            <nav class="main-nav">
+                <input type="checkbox" id="menu-toggle">
+                <ul id="nav-menu" class="menu">
+                    <li data-state="disabled"><a href="gifts.html" class="action-small">Gifts</a></li>
+                    <li data-state="enabled"><a href="index.html#about-section" class="action-small">About</a></li>
+                    <li data-state="enabled"><a href="index.html#best-gifts-section" class="action-small">Best</a></li>
+                    <li data-state="enabled"><a href="#footer" class="action-small">Contacts</a></li>
+                </ul>
+                <label for="menu-toggle" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="main-gift-container">
+            <section class="gifts container" id="gifts-section">
+                <div class="content">
+                    <h1>Achieve health,<br>harmony, and<br>inner strength</h1>
+                    <ul id="gifts-menu">
+                        <li data-state="active" class="tab"><span class="action-small">All</span></li>
+                        <li class="tab"><span class="action-small">For Harmony</span></li>
+                        <li class="tab"><span class="action-small">For Work</span></li>
+                        <li class="tab"><span class="action-small">For Health</span></li>
+                    </ul>
+                    <div class="gifts-items" id="gifts-container">
+                        <!-- <div class="gift-item for-work">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for work</h4>
+                                <h3>console.log guru</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-health">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for health</h4>
+                                <h3>step master</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-work">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for work</h4>
+                                <h3>bug magnet</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-work">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for work</h4>
+                                <h3>shortcut cheater</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-health">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for health</h4>
+                                <h3>posture levitation</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-harmony">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for harmony</h4>
+                                <h3>bug acceptance guru</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-health">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for health</h4>
+                                <h3>snack resister</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-harmony">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for harmony</h4>
+                                <h3>error laugher</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-health">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for health</h4>
+                                <h3>hydration bot</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-work">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for work</h4>
+                                <h3>merge master</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-harmony">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for harmony</h4>
+                                <h3>joy charger</h3>
+                            </div>
+                        </div>
+                        <div class="gift-item for-harmony">
+                            <div class="gift-img"></div>
+                            <div class="gift-text">
+                                <h4>for harmony</h4>
+                                <h3>spontaneous coding philosopher</h3>
+                            </div>
+                        </div> -->
+                    </div>
+                    <dialog id="card-modal" class="modal">
+                        <div class="modal-content">
+                            <div class="close-button" id="close-modal"><i class="fa-solid fa-xmark fa-lg"></i></div>
+                            <div class="modal-image"></div>
+                            <div class="modal-text">
+                                <div class="modal-basic-info">
+                                    <h4 class="category">Category</h4>
+                                    <h3 class="name">Name</h3>
+                                    <p class="paragraph">Text</p>
+                                </div>
+                                <div class="modal-skills">
+                                    <h4>Adds superpowers to:</h4>
+                                    <ul>
+                                        <li><span class="paragraph skill-name">Live</span><span class="paragraph score">+500</span><div class="icons"><img src="img/logo_24px.png" alt="snowflake icon" class="score-icon"></div></li>
+                                        <li><span class="paragraph skill-name">Create</span><span class="paragraph score">+500</span><div class="icons"><img src="img/logo_24px.png" alt="snowflake icon" class="score-icon"></div></li>
+                                        <li><span class="paragraph skill-name">Love</span><span class="paragraph score">+200</span><div class="icons"><img src="img/logo_24px.png" alt="snowflake icon" class="score-icon"></div></li>
+                                        <li><span class="paragraph skill-name">Dream</span><span class="paragraph score">+400</span><div class="icons"><img src="img/logo_24px.png" alt="snowflake icon" class="score-icon"></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </dialog>
+                </div>
+            </section>
+        </div>
+    </main>
+    <button id="back-to-top" class="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-cards">
+                <a href="tel:+375291112233" class="footer-card">
+                    <div class="footer-card-img"></div>
+                    <span class="action-large">+375 (29) 111-22-33</span>
+                    <h3>Call us</h3>
+                </a>
+                <a href="https://maps.app.goo.gl/yqNieH2CbtmBQvU17" target="_blank" class="footer-card">
+                    <div class="footer-card-img"></div>
+                    <span class="action-large">magic forest</span>
+                    <h3>Meet us</h3>
+                </a>
+                <a href="mailto:gifts@magic.com" class="footer-card">
+                    <div class="footer-card-img"></div>
+                    <span class="action-large">gifts@magic.com</span>
+                    <h3>write us</h3>
+                </a>
+            </div>
+            <div class="footer-text">
+                <div class="socials-container">
+                    <i class="fa-brands fa-telegram fa-xl"></i>
+                    <i class="fa-brands fa-facebook fa-xl"></i>
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                    <i class="fa-brands fa-x-twitter fa-xl"></i>
+                </div>
+                <span class="paragraph">&copy; Copyright 2025, All Rights Reserved</span>
+                <a href="https://rs.school/" target="_blank" class="caption text">Made in Rolling Scopes School</a>
+            </div>
+        </div>
+        <!-- <a href="https://www.flaticon.com/free-icons/snow" title="snow icons">Snow icons created by Freepik - Flaticon</a> -->
+    </footer>
+    <script src="script.js" defer></script>
+    <script src="gifts.js" defer></script>
+</body>
+</html>
